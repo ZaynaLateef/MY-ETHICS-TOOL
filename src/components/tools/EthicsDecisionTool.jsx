@@ -1,130 +1,100 @@
 import React, { useState } from 'react';
 
-function EthicsDecisionTool() {
+function HighVoltageEthicsDecisionTool() {
   const [scenario, setScenario] = useState(null);
   const [selectedResponse, setSelectedResponse] = useState(null);
 
   const scenarios = [
     {
       id: 1,
-      title: "Safety Critical Design Dilemma",
-      description:
-        "You're designing a high-voltage electrical system for critical infrastructure. During testing, you uncover a potential safety vulnerability that would require significant redesign.",
+      title: "The Substation Safety Dilemma",
+      description: 
+        "You're Dr. Marcus Chen, a senior high voltage engineering specialist working for GridTech Solutions. During a routine inspection of a new 345kV substation in a densely populated suburban area, you discover a critical design flaw in the grounding system. The current configuration could potentially create ground fault conditions that might lead to electrical arcing or equipment failure. The substation is scheduled to go live in just 17 days, and your finding would require a complete redesign that could cost the company $2.3 million and delay the project by several months.",
       options: [
         {
-          text: "Immediately report and recommend a complete redesign",
+          text: "Immediately report the finding and recommend a complete redesign of the grounding system",
           ethical_score: 10,
           feedback:
-            "Prioritizing safety demonstrates the highest professional integrity and protects potential users from critical risks.",
+            "By prioritizing public safety over project timeline and cost, you demonstrate the highest standard of professional engineering ethics. Your decision could prevent potential electrical accidents that could result in loss of life or catastrophic infrastructure damage. The IEEE Code of Ethics explicitly requires engineers to prioritize public safety above all other considerations.",
         },
         {
-          text: "Minimize the issue in your report to avoid project delays",
+          text: "Propose minor modifications that appear to address the issue while minimizing project disruption",
           ethical_score: 2,
           feedback:
-            "Concealing safety concerns is a severe ethical violation that could endanger lives and compromise professional standards.",
+            "Attempting to conceal or minimize a critical safety vulnerability is a severe ethical violation. In high voltage engineering, such a decision could potentially expose hundreds of residents to life-threatening electrical risks. Your professional responsibility demands absolute transparency and commitment to safety, regardless of financial or scheduling pressures.",
         },
         {
-          text: "Conduct additional independent testing before making a decision",
+          text: "Conduct additional comprehensive testing to validate the exact nature and extent of the grounding system vulnerability",
           ethical_score: 8,
           feedback:
-            "Seeking more information shows professional diligence and responsible engineering practice.",
+            "Your approach demonstrates professional diligence and responsible engineering practice. By seeking more detailed information, you balance the need for thorough investigation with the potential urgency of safety concerns. Additional testing can provide concrete data to support a definitive recommendation.",
         },
       ],
       resources: [
-        { name: "NSPE Code of Ethics: Safety", url: "https://www.nspe.org/resources/ethics/code-ethics" },
-        { name: "Coursera: Engineering Ethics", url: "https://www.coursera.org/learn/ethics-technology-engineering" },
+        { name: "IEEE Code of Ethics", url: "https://www.ieee.org/about/corporate/governance/code-of-ethics.html" },
+        { name: "High Voltage Safety Standards", url: "https://standards.ieee.org/industry-connections/ec/high-voltage-safety/" },
       ],
     },
     {
       id: 2,
-      title: "Environmental Impact Challenge",
-      description:
-        "Your team is developing a new power transmission technology that could be more efficient but requires rare earth mineral extraction with potential environmental consequences.",
+      title: "Aging Transmission Line Integrity Challenge",
+      description: 
+        "As the lead engineer for Regional Power Transmission, you're responsible for a 230kV transmission line that was originally installed in 1972. Recent thermal imaging and partial discharge tests reveal significant corona damage and insulation degradation. Replacing the entire line would cost approximately $18 million and require temporarily cutting power to three industrial complexes and two residential areas. However, continuing to operate the line could risk a catastrophic failure.",
       options: [
         {
-          text: "Halt the project and research sustainable alternatives",
-          ethical_score: 9,
+          text: "Recommend immediate full line replacement, accepting the significant cost and operational disruption",
+          ethical_score: 10,
           feedback:
-            "Prioritizing environmental sustainability demonstrates forward-thinking and responsible engineering ethics.",
+            "By choosing comprehensive replacement, you prioritize public safety and infrastructure reliability over short-term economic considerations. Your decision demonstrates the core engineering principle of preventing potential catastrophic failures through proactive maintenance and replacement.",
         },
         {
-          text: "Proceed with minimal environmental mitigation efforts",
+          text: "Propose a minimal repair strategy that temporarily extends the line's operational life",
           ethical_score: 3,
           feedback:
-            "Neglecting environmental concerns represents a significant ethical failure in modern engineering practice.",
+            "Attempting to extend the life of critically degraded high voltage infrastructure is an extremely dangerous approach. The potential for a cascading failure that could result in widespread power outages, equipment damage, and potential loss of life far outweighs any short-term cost savings.",
         },
         {
-          text: "Develop a comprehensive environmental restoration plan",
+          text: "Develop a phased replacement strategy that minimizes operational disruption while systematically addressing the most critical sections",
           ethical_score: 8,
           feedback:
-            "Proactively addressing potential environmental impact shows a holistic and responsible engineering approach.",
+            "Your nuanced approach balances safety, operational continuity, and economic considerations. By developing a strategic phased replacement, you demonstrate advanced engineering problem-solving that maintains infrastructure integrity while minimizing potential risks.",
         },
       ],
       resources: [
-        { name: "FutureLearn: Responsible Innovation", url: "https://www.futurelearn.com/courses/responsible-innovation" },
-        { name: "NSPE Environmental Ethics Resources", url: "https://www.nspe.org/resources/issues-and-advocacy/environmental-ethics" },
+        { name: "CIGRE Technical Brochures on Transmission Line Integrity", url: "https://www.cigre.org/technical-publications" },
+        { name: "High Voltage Equipment Lifecycle Management", url: "https://www.powereng.com/transmission-line-management" },
       ],
     },
     {
       id: 3,
-      title: "Whistleblower Dilemma",
-      description:
-        "You discover your company is cutting corners on safety regulations in a way that could potentially harm workers or end-users, but speaking up might jeopardize your job.",
+      title: "Electromagnetic Interference (EMI) Mitigation Dilemma",
+      description: 
+        "You're leading a high voltage transmission project near a sensitive medical research facility. Preliminary electromagnetic interference (EMI) studies suggest that the proposed 500kV transmission line could potentially interfere with critical medical imaging equipment used in advanced neurological research. Rerouting the line would add 37 kilometers and approximately $12 million to the project cost.",
       options: [
         {
-          text: "Report the issues through official internal channels",
-          ethical_score: 9,
-          feedback:
-            "Following proper reporting procedures shows commitment to professional responsibility and workplace safety.",
-        },
-        {
-          text: "Remain silent to protect your career",
-          ethical_score: 2,
-          feedback:
-            "Prioritizing personal job security over potential harm to others is a serious ethical violation of engineering principles.",
-        },
-        {
-          text: "Anonymously report to regulatory bodies",
-          ethical_score: 7,
-          feedback:
-            "While anonymous reporting can be effective, it may not provide the most direct path to resolving the underlying issues.",
-        },
-      ],
-      resources: [
-        { name: "NSPE Code of Ethics: Whistleblowing", url: "https://www.nspe.org/resources/ethics/code-ethics" },
-        { name: "Ethics and Reporting Resources", url: "https://www.whistleblowers.org/resources/" },
-      ],
-    },
-    {
-      id: 4,
-      title: "AI Bias in Development",
-      description:
-        "Your team is developing an AI system for critical infrastructure. You recognize potential bias in the training data that could lead to discriminatory outcomes.",
-      options: [
-        {
-          text: "Halt development and redesign the training approach",
+          text: "Recommend a complete line rerouting to eliminate potential EMI risks",
           ethical_score: 10,
           feedback:
-            "Proactively addressing potential ethical issues in AI development demonstrates responsible and principled engineering.",
+            "By prioritizing the integrity of critical medical research and potential patient safety, you demonstrate exceptional professional ethics. Your decision recognizes that the potential scientific and medical implications far outweigh the additional project costs.",
         },
         {
-          text: "Proceed with the current approach and hope for the best",
-          ethical_score: 1,
+          text: "Proceed with the original route and propose minimal EMI mitigation techniques",
+          ethical_score: 2,
           feedback:
-            "Ignoring potential systemic biases is a severe ethical failure that could lead to harmful technological impacts.",
+            "Risking interference with medical research equipment represents a profound ethical failure. The potential disruption to critical scientific research and potential impact on medical diagnostics cannot be justified by cost considerations.",
         },
         {
-          text: "Implement additional bias testing and mitigation strategies",
+          text: "Conduct extensive EMI modeling and develop a comprehensive shielding and mitigation strategy",
           ethical_score: 8,
           feedback:
-            "Seeking to understand and mitigate potential ethical challenges shows professional diligence and responsible innovation.",
+            "Your approach demonstrates sophisticated engineering problem-solving. By thoroughly investigating EMI mitigation strategies, you seek a balanced solution that addresses both technical requirements and potential research impacts.",
         },
       ],
       resources: [
-        { name: "Coursera: Ethics in AI", url: "https://www.coursera.org/learn/ai-ethics" },
-        { name: "Stanford Encyclopedia of Philosophy: Ethics of AI", url: "https://plato.stanford.edu/entries/ethics-ai/" },
+        { name: "IEEE Standard for Electromagnetic Compatibility", url: "https://standards.ieee.org/standard/1613-2009.html" },
+        { name: "EMI Mitigation Techniques in High Voltage Systems", url: "https://www.ieeeusa.org/tech-topics/emi-mitigation" },
       ],
-    },
+    }
   ];
 
   const handleScenarioSelect = (selectedScenario) => {
@@ -165,7 +135,7 @@ function EthicsDecisionTool() {
           marginBottom: "20px",
         }}
       >
-        Ethics Decision Tool
+        High Voltage Engineering Ethics Decision Tool
       </h1>
 
       <div
@@ -347,4 +317,4 @@ function EthicsDecisionTool() {
   );
 }
 
-export default EthicsDecisionTool;
+export default HighVoltageEthicsDecisionTool;
